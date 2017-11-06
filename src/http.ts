@@ -17,7 +17,7 @@ const db = database();
 const http = {
 
 	async add(path: string, payload: Object): Promise<any> {
-		return db.ref(`${path}}`).set(payload);
+		return db.ref(path).set(payload);
 	},
 
 	async delete(path: string): Promise<any> {

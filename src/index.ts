@@ -28,6 +28,6 @@ interface indexedFund {
 	}, {});
 
 	await http.add('/recommendFunds', indexedFunds);
-	console.log('add succeed!', indexedFunds);
+	console.log('add succeed!');
 
 })();
