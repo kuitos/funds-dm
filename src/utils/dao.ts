@@ -5,7 +5,7 @@
  */
 
 import { credential, database, initializeApp, ServiceAccount } from 'firebase-admin';
-import * as secret from '../secret.json';
+import * as secret from '../../secret.json';
 
 initializeApp({
 	credential: credential.cert((<ServiceAccount>secret)),
@@ -14,17 +14,17 @@ initializeApp({
 
 const db = database();
 
-const http = {
+const dao = {
 
-	async add(path: string, payload: Object): Promise<any> {
+	add(path: string, payload: Object): Promise<any> {
 		return db.ref(path).set(payload);
 	},
 
-	async delete(path: string): Promise<any> {
+	delete(path: string): Promise<any> {
 		return db.ref(path).remove();
 	},
 
-	async update(path: string, payload: Object): Promise<any> {
+	update(path: string, payload: Object): Promise<any> {
 		return db.ref(path).update(payload);
 	},
 
@@ -36,4 +36,4 @@ const http = {
 
 };
 
-export default http;
+export default dao;

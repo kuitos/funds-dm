@@ -1,23 +1,25 @@
 {
-  "name": "funds-dm",
-  "version": "0.0.1",
-  "description": "funds data mining",
-  "main": "index.js",
-  "scripts": {
-    "start": "tsc -w",
-    "fetch": "node lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "kuitos",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.17.0",
-    "firebase-admin": "^5.4.3",
-    "lodash": "^4.17.4"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.81",
-    "@types/node": "^8.0.47",
-    "typescript": "^2.6.1"
-  }
+ "name": "funds-dm",
+ "version": "0.0.1",
+ "description": "funds data mining",
+ "main": "index.js",
+ "scripts": {
+  "start": "tsc -w",
+  "tsc": "tsc",
+  "fetch": "npm run tsc && node lib/index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "author": "kuitos",
+ "license": "MIT",
+ "dependencies": {
+  "axios": "^0.17.0",
+  "firebase-admin": "^5.4.3",
+  "iconv-lite": "^0.4.19",
+  "lodash": "^4.17.4"
+ },
+ "devDependencies": {
+  "@types/lodash": "^4.14.81",
+  "@types/node": "^8.0.47",
+  "typescript": "^2.6.1"
+ }
 }

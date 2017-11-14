@@ -4,15 +4,10 @@
  * @since 2017-11-06
  */
 
-export interface FundsPagination {
-	datas: Array<string>
-}
-
-export default function evalResponse(literal: string): FundsPagination {
+export default function evalResponse<T>(prefix: string, literal: string): T | null {
 
 	// 构建赋值语句
-	let acceptedVariable = {datas: []};
-	const prefix = 'var rankData =';
+	let acceptedVariable = null;
 	const assignment = `acceptedVariable = ${literal.substring(prefix.length).trim()}`;
 	eval(assignment);
 	return acceptedVariable;
