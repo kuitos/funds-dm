@@ -8,7 +8,7 @@ import { credential, database, initializeApp, ServiceAccount } from 'firebase-ad
 import * as secret from '../../secret.json';
 
 initializeApp({
-	credential: credential.cert((secret as ServiceAccount)),
+	credential: credential.cert(secret as ServiceAccount),
 	databaseURL: 'https://funds-1de2d.firebaseio.com',
 });
 

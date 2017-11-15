@@ -9,10 +9,11 @@ import start from './schedulers/recommends';
 
 try {
 
-	console.info('data mining job start...');
+	console.info('app initialized!');
 
 	// 每天3点执行数据抓取任务
 	scheduleJob({hour: 3}, async () => {
+		console.info('data mining job start...');
 		await start();
 		console.info('congratulation: data mining done!');
 	});
