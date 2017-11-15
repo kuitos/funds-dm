@@ -3,8 +3,8 @@
  * @homepage https://github.com/kuitos/
  * @since 2017-11-13
  */
-import { Fund } from './Fund';
+import { IFund } from './Fund';
 
-export interface RatingFund extends Fund {
-	mstar: number
+export interface IRatingFund extends IFund {
+	mstar: number;
 }

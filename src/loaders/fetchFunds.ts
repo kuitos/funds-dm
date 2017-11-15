@@ -3,18 +3,18 @@
  * @homepage https://github.com/kuitos/
  * @since 2017-11-06
  */
+import { IBaseFund } from '../interfaces/BaseFund';
 import evalResponse from '../utils/evalResponse';
 import http from './http';
-import { BaseFund } from '../interfaces/BaseFund';
 
 const fundsUrl = 'dao://fund.eastmoney.com/data/rankhandler.aspx';
 const jsonpResponsePrefix = 'var rankData =';
 
-export interface FundsPagination {
-	datas: Array<string>
+export interface IFundsPagination {
+	datas: string[];
 }
 
-export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promise<BaseFund[]> {
+export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promise<IBaseFund[]> {
 
 	const date = new Date();
 	const now = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
@@ -29,13 +29,13 @@ export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promi
 		tabSubtype: ',,,,,',
 		pi: 1,
 		pn: sampleSize,
-		dx: 1
+		dx: 1,
 	};
 
 	console.log('fetching funds start...', JSON.stringify(params));
 
 	const response: string = await http.get(fundsUrl, {params}).then(res => res.data);
-	const funds = (evalResponse<FundsPagination>(jsonpResponsePrefix, response) || {datas: []}).datas;
+	const funds = (evalResponse<IFundsPagination>(jsonpResponsePrefix, response) || {datas: []}).datas;
 
 	console.log('fetching funds end..., data length:', funds.length);
 
@@ -53,7 +53,7 @@ export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promi
 			last6Month: Number(last6Month),
 			last1Year: Number(last1Year),
 			last2Year: Number(last2Year),
-			last3Year: Number(last3Year)
+			last3Year: Number(last3Year),
 		};
 
 	});

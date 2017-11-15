@@ -9,8 +9,8 @@ import axios, { AxiosInstance } from 'axios';
 const http: AxiosInstance = axios.create({
 	baseURL: '/',
 	headers: {
-		'Cache-Control': 'no-cache'
-	}
+		'Cache-Control': 'no-cache',
+	},
 });
 
 export default http;

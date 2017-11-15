@@ -8,15 +8,15 @@ import { credential, database, initializeApp, ServiceAccount } from 'firebase-ad
 import * as secret from '../../secret.json';
 
 initializeApp({
-	credential: credential.cert((<ServiceAccount>secret)),
-	databaseURL: 'https://funds-1de2d.firebaseio.com'
+	credential: credential.cert((secret as ServiceAccount)),
+	databaseURL: 'https://funds-1de2d.firebaseio.com',
 });
 
 const db = database();
 
 const dao = {
 
-	add(path: string, payload: Object): Promise<any> {
+	add(path: string, payload: object): Promise<any> {
 		return db.ref(path).set(payload);
 	},
 
@@ -24,7 +24,7 @@ const dao = {
 		return db.ref(path).remove();
 	},
 
-	update(path: string, payload: Object): Promise<any> {
+	update(path: string, payload: object): Promise<any> {
 		return db.ref(path).update(payload);
 	},
 
@@ -32,7 +32,7 @@ const dao = {
 
 		const snapshot = await db.ref(path).once('value');
 		return snapshot.val();
-	}
+	},
 
 };
 

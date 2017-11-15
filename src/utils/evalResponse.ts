@@ -7,8 +7,10 @@
 export default function evalResponse<T>(prefix: string, literal: string): T | null {
 
 	// 构建赋值语句
+	/* tslint:disable */
 	let acceptedVariable = null;
 	const assignment = `acceptedVariable = ${literal.substring(prefix.length).trim()}`;
 	eval(assignment);
+	/* tslint:enable */
 	return acceptedVariable;
 }
