@@ -17,11 +17,13 @@
     "axios": "^0.17.0",
     "firebase-admin": "^5.4.3",
     "iconv-lite": "^0.4.19",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "node-schedule": "^1.2.5"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.81",
     "@types/node": "^8.0.47",
+    "@types/node-schedule": "^1.2.1",
     "husky": "^0.14.3",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^4.1.1",

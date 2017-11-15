@@ -32,12 +32,12 @@ export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promi
 		dx: 1,
 	};
 
-	console.log('fetching funds start...', JSON.stringify(params));
+	console.info('fetching funds start...', JSON.stringify(params));
 
 	const response: string = await http.get(fundsUrl, {params}).then(res => res.data);
 	const funds = (evalResponse<IFundsPagination>(jsonpResponsePrefix, response) || {datas: []}).datas;
 
-	console.log('fetching funds end..., data length:', funds.length);
+	console.info('fetching funds end..., data length:', funds.length);
 
 	return funds.map(fund => {
 

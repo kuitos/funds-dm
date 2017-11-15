@@ -28,13 +28,13 @@ export async function fetchRatings(sampleSize: number): Promise<IRatingFund[]> {
 		endDate: now,
 	};
 
-	console.log('fetching rating start...', JSON.stringify(params));
+	console.info('fetching rating start...', JSON.stringify(params));
 
 	const response: string = await http.get(ratingsUrl, {params, responseType: 'arraybuffer'})
 		.then((res) => decode(res.data, 'gbk'));
 	const ratings = (evalResponse<IRatingResponse[]>(jsonpResponsePrefix, response) || []).slice(0, sampleSize);
 
-	console.log('fetching rating end..., data length:', ratings.length);
+	console.info('fetching rating end..., data length:', ratings.length);
 
 	return ratings.map<IRatingFund>(fund => ({
 		no: fund.FUND_CODE,

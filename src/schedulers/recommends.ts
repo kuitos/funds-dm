@@ -41,5 +41,5 @@ export default async function start() {
 	await dao.add('/recommendFunds', indexedFunds);
 	await dao.update('/recommendFunds', {length: intersectedFunds.length});
 
-	console.log(intersectedFunds.length, ' recommended funds saved!');
+	console.info(intersectedFunds.length, ' recommended funds saved!');
 }
