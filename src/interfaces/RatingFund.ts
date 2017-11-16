@@ -6,5 +6,9 @@
 import { IFund } from './Fund';
 
 export interface IRatingFund extends IFund {
-	mstar: number;
+	mstar?: number;  // 晨星评级
+	shStar?: number; // 上海证券
+	cmbStar?: number; // 招商证券
+	jajxStar?: number; // 济安金信
+	perfectCount?: number; // 五星评级家数
 }
