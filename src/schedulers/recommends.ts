@@ -17,7 +17,7 @@ interface IndexedFund {
 
 export default async function start() {
 
-	const sampleSize = 700;
+	const sampleSize = 500;
 
 	const collection = await Promise.all([
 		fetchFunds('6yzf', sampleSize),
@@ -31,7 +31,7 @@ export default async function start() {
 	const [, , , , ratings] = collection;
 	const intersectedFunds: Array<IBaseFund & IRatingFund> = intersectionBy.apply(null, [...collection, 'no'])
 		.map((v: IFund) => merge(v, ratings.find(rate => rate.no === v.no) || {mstar: 0}))
-		.filter((v: any) => v.perfectCount >= 3);
+		.filter((v: any) => v.perfectCount >= 2);
 
 	const indexedFunds = intersectedFunds.reduce((a: IndexedFund, b: IFund) => {
 		a[b.no] = b;
