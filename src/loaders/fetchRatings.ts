@@ -25,7 +25,7 @@ interface IRatingResponse {
 async function fetchMstarRatings(sampleSize: number): Promise<IRatingFund[]> {
 
 	const date = new Date();
-	const now = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+	const now = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 	const params = {
 		from: 'V_JRJ_FUND_MSTAR',
 		endDate: now,

@@ -17,7 +17,7 @@ export interface IFundsPagination {
 export async function fetchFunds(sc: string = '1nzf', sampleSize: number): Promise<IBaseFund[]> {
 
 	const date = new Date();
-	const now = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+	const now = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 	const params = {
 		op: 'ph',
 		dt: 'kf',
