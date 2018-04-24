@@ -7,7 +7,7 @@ import { IBaseFund } from '../interfaces/BaseFund';
 import evalResponse from '../utils/evalResponse';
 import http from './http';
 
-const fundsUrl = 'dao://fund.eastmoney.com/data/rankhandler.aspx';
+const fundsUrl = 'http://fund.eastmoney.com/data/rankhandler.aspx';
 const jsonpResponsePrefix = 'var rankData =';
 
 export interface IFundsPagination {
