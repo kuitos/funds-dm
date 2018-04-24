@@ -7,6 +7,7 @@
 import { scheduleJob } from 'node-schedule';
 import start from './schedulers/recommends';
 
+console.info('app initialized!');
 // 每天3点执行数据抓取任务
 scheduleJob({hour: 3, minute: 0, dayOfWeek: [0, 1, 2, 3, 4, 5, 6]}, async () => {
 
