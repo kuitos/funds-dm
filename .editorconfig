@@ -18,7 +18,7 @@ indent_style = tab
 [*.md]
 trim_trailing_whitespace = false
 
-[{package.json,.babelrc,.eslintrc}]
+[{package.json, tslint.json, .babelrc, .eslintrc}]
 indent_style = space
 indent_size = 2
 
