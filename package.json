@@ -13,7 +13,7 @@
   "author": "kuitos",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.0",
+    "axios": "^0.21.1",
     "firebase-admin": "^5.4.3",
     "iconv-lite": "^0.4.19",
     "js-yaml": "^3.13.1",
